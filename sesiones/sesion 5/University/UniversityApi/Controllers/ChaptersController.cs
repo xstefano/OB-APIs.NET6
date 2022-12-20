@@ -7,56 +7,52 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UniversityApi.Data;
 using UniversityApi.Models;
-using UniversityApi.Services;
 
 namespace UniversityApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StudentsController : ControllerBase
+    public class ChaptersController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
-        private readonly IStudentsService _studentService;
-
-        public StudentsController(ApplicationDbContext context, IStudentsService studentService)
+        public ChaptersController(ApplicationDbContext context)
         {
             _context = context;
-            _studentService = studentService;
         }
 
-        // GET: api/Students
+        // GET: api/Chapters
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
+        public async Task<ActionResult<IEnumerable<Chapter>>> GetChapters()
         {
-            return await _context.Students.ToListAsync();
+            return await _context.Chapters.ToListAsync();
         }
 
-        // GET: api/Students/5
+        // GET: api/Chapters/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Student>> GetStudent(int id)
+        public async Task<ActionResult<Chapter>> GetChapter(int id)
         {
-            var student = await _context.Students.FindAsync(id);
+            var chapter = await _context.Chapters.FindAsync(id);
 
-            if (student == null)
+            if (chapter == null)
             {
                 return NotFound();
             }
 
-            return student;
+            return chapter;
         }
 
-        // PUT: api/Students/5
+        // PUT: api/Chapters/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutStudent(int id, Student student)
+        public async Task<IActionResult> PutChapter(int id, Chapter chapter)
         {
-            if (id != student.Id)
+            if (id != chapter.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(student).State = EntityState.Modified;
+            _context.Entry(chapter).State = EntityState.Modified;
 
             try
             {
@@ -64,7 +60,7 @@ namespace UniversityApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!StudentExists(id))
+                if (!ChapterExists(id))
                 {
                     return NotFound();
                 }
@@ -77,36 +73,36 @@ namespace UniversityApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Students
+        // POST: api/Chapters
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Student>> PostStudent(Student student)
+        public async Task<ActionResult<Chapter>> PostChapter(Chapter chapter)
         {
-            _context.Students.Add(student);
+            _context.Chapters.Add(chapter);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetStudent", new { id = student.Id }, student);
+            return CreatedAtAction("GetChapter", new { id = chapter.Id }, chapter);
         }
 
-        // DELETE: api/Students/5
+        // DELETE: api/Chapters/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteStudent(int id)
+        public async Task<IActionResult> DeleteChapter(int id)
         {
-            var student = await _context.Students.FindAsync(id);
-            if (student == null)
+            var chapter = await _context.Chapters.FindAsync(id);
+            if (chapter == null)
             {
                 return NotFound();
             }
 
-            _context.Students.Remove(student);
+            _context.Chapters.Remove(chapter);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool StudentExists(int id)
+        private bool ChapterExists(int id)
         {
-            return _context.Students.Any(e => e.Id == id);
+            return _context.Chapters.Any(e => e.Id == id);
         }
     }
 }

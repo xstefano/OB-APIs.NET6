@@ -7,56 +7,52 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UniversityApi.Data;
 using UniversityApi.Models;
-using UniversityApi.Services;
 
 namespace UniversityApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StudentsController : ControllerBase
+    public class CategoriesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
-        private readonly IStudentsService _studentService;
-
-        public StudentsController(ApplicationDbContext context, IStudentsService studentService)
+        public CategoriesController(ApplicationDbContext context)
         {
             _context = context;
-            _studentService = studentService;
         }
 
-        // GET: api/Students
+        // GET: api/Categories
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
+        public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
         {
-            return await _context.Students.ToListAsync();
+            return await _context.Categories.ToListAsync();
         }
 
-        // GET: api/Students/5
+        // GET: api/Categories/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Student>> GetStudent(int id)
+        public async Task<ActionResult<Category>> GetCategory(int id)
         {
-            var student = await _context.Students.FindAsync(id);
+            var category = await _context.Categories.FindAsync(id);
 
-            if (student == null)
+            if (category == null)
             {
                 return NotFound();
             }
 
-            return student;
+            return category;
         }
 
-        // PUT: api/Students/5
+        // PUT: api/Categories/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutStudent(int id, Student student)
+        public async Task<IActionResult> PutCategory(int id, Category category)
         {
-            if (id != student.Id)
+            if (id != category.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(student).State = EntityState.Modified;
+            _context.Entry(category).State = EntityState.Modified;
 
             try
             {
@@ -64,7 +60,7 @@ namespace UniversityApi.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!StudentExists(id))
+                if (!CategoryExists(id))
                 {
                     return NotFound();
                 }
@@ -77,36 +73,36 @@ namespace UniversityApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Students
+        // POST: api/Categories
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Student>> PostStudent(Student student)
+        public async Task<ActionResult<Category>> PostCategory(Category category)
         {
-            _context.Students.Add(student);
+            _context.Categories.Add(category);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetStudent", new { id = student.Id }, student);
+            return CreatedAtAction("GetCategory", new { id = category.Id }, category);
         }
 
-        // DELETE: api/Students/5
+        // DELETE: api/Categories/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteStudent(int id)
+        public async Task<IActionResult> DeleteCategory(int id)
         {
-            var student = await _context.Students.FindAsync(id);
-            if (student == null)
+            var category = await _context.Categories.FindAsync(id);
+            if (category == null)
             {
                 return NotFound();
             }
 
-            _context.Students.Remove(student);
+            _context.Categories.Remove(category);
             await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
-        private bool StudentExists(int id)
+        private bool CategoryExists(int id)
         {
-            return _context.Students.Any(e => e.Id == id);
+            return _context.Categories.Any(e => e.Id == id);
         }
     }
 }
