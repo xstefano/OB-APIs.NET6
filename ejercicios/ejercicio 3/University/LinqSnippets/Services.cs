@@ -13,7 +13,6 @@ namespace LinqSnippets
             _context = context;
         }
 
-
         // Buscar usuarios por email:
         public async void FindUsersByEmail(string email)
         {
