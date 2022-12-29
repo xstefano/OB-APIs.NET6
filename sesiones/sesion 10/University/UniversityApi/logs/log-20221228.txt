@@ -1,0 +1,182 @@
+2022-12-28 20:34:27.139 -05:00 [INF] User profile is available. Using 'C:\Users\iDonk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-28 20:34:27.962 -05:00 [INF] Now listening on: https://localhost:7130
+2022-12-28 20:34:27.993 -05:00 [INF] Now listening on: http://localhost:5188
+2022-12-28 20:34:28.000 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-28 20:34:28.011 -05:00 [INF] Hosting environment: Development
+2022-12-28 20:34:28.032 -05:00 [INF] Content root path: C:\Users\iDonk\source\repos\OpenBootcamp\sesiones\sesion 10\University\UniversityApi\
+2022-12-28 20:34:29.579 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/swagger/index.html - -
+2022-12-28 20:34:30.315 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/swagger/index.html - - - 200 - text/html;charset=utf-8 741.8324ms
+2022-12-28 20:34:30.333 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/_framework/aspnetcore-browser-refresh.js - -
+2022-12-28 20:34:30.354 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 20.4711ms
+2022-12-28 20:34:30.363 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/_vs/browserLink - -
+2022-12-28 20:34:30.477 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 110.0830ms
+2022-12-28 20:34:30.545 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/swagger/v1/swagger.json - -
+2022-12-28 20:34:30.860 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 315.3788ms
+2022-12-28 20:35:02.334 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7130/api/Account/GetToken application/json 50
+2022-12-28 20:35:02.356 -05:00 [INF] CORS policy execution successful.
+2022-12-28 20:35:02.362 -05:00 [INF] Executing endpoint 'UniversityApi.Controllers.AccountController.GetToken (UniversityApi)'
+2022-12-28 20:35:02.398 -05:00 [INF] Route matched with {action = "GetToken", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetToken(UniversityApi.Models.UserLogins) on controller UniversityApi.Controllers.AccountController (UniversityApi).
+2022-12-28 20:35:04.369 -05:00 [INF] Entity Framework Core 6.0.12 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.12' with options: None
+2022-12-28 20:35:20.428 -05:00 [ERR] An error occurred using the connection to database 'DBUniversity' on server 'CLOUDS\SQLEXPRESS'.
+2022-12-28 20:35:20.455 -05:00 [ERR] An exception occurred while iterating over the results of a query for context type 'UniversityApi.Data.ApplicationDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SNI_PN11, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SNI_PN11, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2022-12-28 20:36:57.254 -05:00 [INF] User profile is available. Using 'C:\Users\iDonk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-28 20:36:57.840 -05:00 [INF] Now listening on: https://localhost:7130
+2022-12-28 20:36:57.844 -05:00 [INF] Now listening on: http://localhost:5188
+2022-12-28 20:36:57.855 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-28 20:36:57.859 -05:00 [INF] Hosting environment: Development
+2022-12-28 20:36:57.862 -05:00 [INF] Content root path: C:\Users\iDonk\source\repos\OpenBootcamp\sesiones\sesion 10\University\UniversityApi\
+2022-12-28 20:36:59.093 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/swagger/index.html - -
+2022-12-28 20:36:59.909 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/swagger/index.html - - - 200 - text/html;charset=utf-8 799.0526ms
+2022-12-28 20:36:59.981 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/_vs/browserLink - -
+2022-12-28 20:36:59.981 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/_framework/aspnetcore-browser-refresh.js - -
+2022-12-28 20:37:00.064 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 82.3348ms
+2022-12-28 20:37:00.093 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 112.2573ms
+2022-12-28 20:37:00.156 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/swagger/v1/swagger.json - -
+2022-12-28 20:37:00.703 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 546.5877ms
+2022-12-28 20:37:16.124 -05:00 [INF] Request starting HTTP/2 POST https://localhost:7130/api/Account/GetToken application/json 48
+2022-12-28 20:37:16.140 -05:00 [INF] CORS policy execution successful.
+2022-12-28 20:37:16.147 -05:00 [INF] Executing endpoint 'UniversityApi.Controllers.AccountController.GetToken (UniversityApi)'
+2022-12-28 20:37:16.175 -05:00 [INF] Route matched with {action = "GetToken", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetToken(UniversityApi.Models.UserLogins) on controller UniversityApi.Controllers.AccountController (UniversityApi).
+2022-12-28 20:37:17.236 -05:00 [INF] Executing OkObjectResult, writing value of type 'UniversityApi.Models.UserTokens'.
+2022-12-28 20:37:17.275 -05:00 [INF] Executed action UniversityApi.Controllers.AccountController.GetToken (UniversityApi) in 1081.7367ms
+2022-12-28 20:37:17.289 -05:00 [INF] Executed endpoint 'UniversityApi.Controllers.AccountController.GetToken (UniversityApi)'
+2022-12-28 20:37:17.301 -05:00 [INF] HTTP POST /api/Account/GetToken responded 200 in 1166.4858 ms
+2022-12-28 20:37:17.313 -05:00 [INF] Request finished HTTP/2 POST https://localhost:7130/api/Account/GetToken application/json 48 - 200 - application/json;+charset=utf-8 1188.9680ms
+2022-12-28 20:37:26.639 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/WeatherForecast - -
+2022-12-28 20:37:26.880 -05:00 [INF] Executing endpoint 'UniversityApi.Controllers.WeatherForecastController.Get (UniversityApi)'
+2022-12-28 20:37:26.883 -05:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[UniversityApi.WeatherForecast] Get() on controller UniversityApi.Controllers.WeatherForecastController (UniversityApi).
+2022-12-28 20:37:26.887 -05:00 [INF] WeatherForecastController - Get - Information Level Log
+2022-12-28 20:37:26.891 -05:00 [WRN] WeatherForecastController - Get - Warning Level Log
+2022-12-28 20:37:26.893 -05:00 [ERR] WeatherForecastController - Get - Error Level Log
+2022-12-28 20:37:26.895 -05:00 [FTL] WeatherForecastController - Get - Critical Level Log
+2022-12-28 20:37:26.900 -05:00 [INF] Executing ObjectResult, writing value of type 'UniversityApi.WeatherForecast[]'.
+2022-12-28 20:37:26.906 -05:00 [INF] Executed action UniversityApi.Controllers.WeatherForecastController.Get (UniversityApi) in 20.1549ms
+2022-12-28 20:37:26.909 -05:00 [INF] Executed endpoint 'UniversityApi.Controllers.WeatherForecastController.Get (UniversityApi)'
+2022-12-28 20:37:26.912 -05:00 [INF] HTTP GET /WeatherForecast responded 200 in 270.4706 ms
+2022-12-28 20:37:26.915 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/WeatherForecast - - - 200 - application/json;+charset=utf-8 275.3894ms
+2022-12-28 20:38:36.594 -05:00 [INF] User profile is available. Using 'C:\Users\iDonk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-28 20:38:36.944 -05:00 [INF] Now listening on: https://localhost:7130
+2022-12-28 20:38:36.947 -05:00 [INF] Now listening on: http://localhost:5188
+2022-12-28 20:38:36.955 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-28 20:38:36.958 -05:00 [INF] Hosting environment: Development
+2022-12-28 20:38:36.960 -05:00 [INF] Content root path: C:\Users\iDonk\source\repos\OpenBootcamp\sesiones\sesion 10\University\UniversityApi\
+2022-12-28 20:38:38.140 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/swagger/index.html - -
+2022-12-28 20:38:39.149 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/swagger/index.html - - - 200 - text/html;charset=utf-8 1018.6708ms
+2022-12-28 20:38:39.376 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/_framework/aspnetcore-browser-refresh.js - -
+2022-12-28 20:38:39.390 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 13.5365ms
+2022-12-28 20:38:39.435 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/_vs/browserLink - -
+2022-12-28 20:38:39.489 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 53.3758ms
+2022-12-28 20:38:39.601 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/swagger/v1/swagger.json - -
+2022-12-28 20:38:39.960 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 358.8081ms
+2022-12-28 20:38:53.954 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/WeatherForecast - -
+2022-12-28 20:38:54.336 -05:00 [INF] Executing endpoint 'UniversityApi.Controllers.WeatherForecastController.Get (UniversityApi)'
+2022-12-28 20:38:54.362 -05:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[UniversityApi.WeatherForecast] Get() on controller UniversityApi.Controllers.WeatherForecastController (UniversityApi).
+2022-12-28 20:38:54.373 -05:00 [INF] WeatherForecastController - Get - Information Level Log
+2022-12-28 20:38:54.376 -05:00 [WRN] WeatherForecastController - Get - Warning Level Log
+2022-12-28 20:38:54.379 -05:00 [ERR] WeatherForecastController - Get - Error Level Log
+2022-12-28 20:38:54.384 -05:00 [FTL] WeatherForecastController - Get - Critical Level Log
+2022-12-28 20:38:54.396 -05:00 [INF] Executing ObjectResult, writing value of type 'UniversityApi.WeatherForecast[]'.
+2022-12-28 20:38:54.426 -05:00 [INF] Executed action UniversityApi.Controllers.WeatherForecastController.Get (UniversityApi) in 48.509ms
+2022-12-28 20:38:54.440 -05:00 [INF] Executed endpoint 'UniversityApi.Controllers.WeatherForecastController.Get (UniversityApi)'
+2022-12-28 20:38:54.445 -05:00 [INF] HTTP GET /WeatherForecast responded 200 in 473.3041 ms
+2022-12-28 20:38:54.453 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/WeatherForecast - - - 200 - application/json;+charset=utf-8 498.9917ms
+2022-12-28 20:41:12.828 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/WeatherForecast - -
+2022-12-28 20:41:12.837 -05:00 [INF] Executing endpoint 'UniversityApi.Controllers.WeatherForecastController.Get (UniversityApi)'
+2022-12-28 20:41:12.858 -05:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[UniversityApi.WeatherForecast] Get() on controller UniversityApi.Controllers.WeatherForecastController (UniversityApi).
+2022-12-28 20:41:12.860 -05:00 [INF] WeatherForecastController - Get - Information Level Log
+2022-12-28 20:41:12.863 -05:00 [WRN] WeatherForecastController - Get - Warning Level Log
+2022-12-28 20:41:12.865 -05:00 [ERR] WeatherForecastController - Get - Error Level Log
+2022-12-28 20:41:12.867 -05:00 [FTL] WeatherForecastController - Get - Critical Level Log
+2022-12-28 20:41:12.869 -05:00 [INF] Executing ObjectResult, writing value of type 'UniversityApi.WeatherForecast[]'.
+2022-12-28 20:41:12.871 -05:00 [INF] Executed action UniversityApi.Controllers.WeatherForecastController.Get (UniversityApi) in 11.1141ms
+2022-12-28 20:41:12.875 -05:00 [INF] Executed endpoint 'UniversityApi.Controllers.WeatherForecastController.Get (UniversityApi)'
+2022-12-28 20:41:12.878 -05:00 [INF] HTTP GET /WeatherForecast responded 200 in 43.5558 ms
+2022-12-28 20:41:12.880 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/WeatherForecast - - - 200 - application/json;+charset=utf-8 52.3219ms
+2022-12-28 20:41:16.087 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/WeatherForecast - -
+2022-12-28 20:41:16.092 -05:00 [INF] Executing endpoint 'UniversityApi.Controllers.WeatherForecastController.Get (UniversityApi)'
+2022-12-28 20:41:16.094 -05:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[UniversityApi.WeatherForecast] Get() on controller UniversityApi.Controllers.WeatherForecastController (UniversityApi).
+2022-12-28 20:41:16.096 -05:00 [INF] WeatherForecastController - Get - Information Level Log
+2022-12-28 20:41:16.098 -05:00 [WRN] WeatherForecastController - Get - Warning Level Log
+2022-12-28 20:41:16.099 -05:00 [ERR] WeatherForecastController - Get - Error Level Log
+2022-12-28 20:41:16.101 -05:00 [FTL] WeatherForecastController - Get - Critical Level Log
+2022-12-28 20:41:16.103 -05:00 [INF] Executing ObjectResult, writing value of type 'UniversityApi.WeatherForecast[]'.
+2022-12-28 20:41:16.104 -05:00 [INF] Executed action UniversityApi.Controllers.WeatherForecastController.Get (UniversityApi) in 8.0114ms
+2022-12-28 20:41:16.108 -05:00 [INF] Executed endpoint 'UniversityApi.Controllers.WeatherForecastController.Get (UniversityApi)'
+2022-12-28 20:41:16.110 -05:00 [INF] HTTP GET /WeatherForecast responded 200 in 22.0365 ms
+2022-12-28 20:41:16.112 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/WeatherForecast - - - 200 - application/json;+charset=utf-8 25.9340ms
+2022-12-28 20:41:41.753 -05:00 [INF] User profile is available. Using 'C:\Users\iDonk\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-28 20:41:41.988 -05:00 [INF] Now listening on: https://localhost:7130
+2022-12-28 20:41:41.991 -05:00 [INF] Now listening on: http://localhost:5188
+2022-12-28 20:41:41.997 -05:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-28 20:41:42.000 -05:00 [INF] Hosting environment: Development
+2022-12-28 20:41:42.002 -05:00 [INF] Content root path: C:\Users\iDonk\source\repos\OpenBootcamp\sesiones\sesion 10\University\UniversityApi\
+2022-12-28 20:41:43.606 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/swagger/index.html - -
+2022-12-28 20:41:44.188 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/swagger/index.html - - - 200 - text/html;charset=utf-8 592.1923ms
+2022-12-28 20:41:44.228 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/_framework/aspnetcore-browser-refresh.js - -
+2022-12-28 20:41:44.231 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/_vs/browserLink - -
+2022-12-28 20:41:44.238 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/_framework/aspnetcore-browser-refresh.js - - - 200 11996 application/javascript;+charset=utf-8 9.7204ms
+2022-12-28 20:41:44.274 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 43.3016ms
+2022-12-28 20:41:44.351 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/swagger/v1/swagger.json - -
+2022-12-28 20:41:44.625 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 273.6242ms
+2022-12-28 20:41:54.952 -05:00 [INF] Request starting HTTP/2 GET https://localhost:7130/WeatherForecast - -
+2022-12-28 20:41:55.277 -05:00 [INF] Executing endpoint 'UniversityApi.Controllers.WeatherForecastController.Get (UniversityApi)'
+2022-12-28 20:41:55.290 -05:00 [INF] Route matched with {action = "Get", controller = "WeatherForecast"}. Executing controller action with signature System.Collections.Generic.IEnumerable`1[UniversityApi.WeatherForecast] Get() on controller UniversityApi.Controllers.WeatherForecastController (UniversityApi).
+2022-12-28 20:41:55.294 -05:00 [INF] WeatherForecastController - Get - Information Level Log
+2022-12-28 20:41:55.298 -05:00 [WRN] WeatherForecastController - Get - Warning Level Log
+2022-12-28 20:41:55.302 -05:00 [ERR] WeatherForecastController - Get - Error Level Log
+2022-12-28 20:41:55.304 -05:00 [FTL] WeatherForecastController - Get - Critical Level Log
+2022-12-28 20:41:55.317 -05:00 [INF] Executing ObjectResult, writing value of type 'UniversityApi.WeatherForecast[]'.
+2022-12-28 20:41:55.336 -05:00 [INF] Executed action UniversityApi.Controllers.WeatherForecastController.Get (UniversityApi) in 37.9349ms
+2022-12-28 20:41:55.346 -05:00 [INF] Executed endpoint 'UniversityApi.Controllers.WeatherForecastController.Get (UniversityApi)'
+2022-12-28 20:41:55.354 -05:00 [INF] HTTP GET /WeatherForecast responded 200 in 386.7393 ms
+2022-12-28 20:41:55.357 -05:00 [INF] Request finished HTTP/2 GET https://localhost:7130/WeatherForecast - - - 200 - application/json;+charset=utf-8 405.6922ms
